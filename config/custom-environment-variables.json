@@ -1,0 +1,31 @@
+{
+  "env": "NODE_ENV",
+  "database": {
+    "connection": "DB_CONNECTION_STRING"
+  },
+  "server": {
+    "port": "SERVER_PORT",
+    "host": "SERVER_HOST",
+    "scheme": "SERVER_SCHEME",
+    "url": "SERVER_URL"
+  },
+<<<<<<< HEAD
+  "aws": {
+    "accessKeyId": "AWS_ACCESS_KEY_ID",
+    "secretAccessKey": "AWS_SECRET_ACCESS_KEY",
+    "cloudfront": {
+      "keyId": "AWS_CLOUDFRONT_KEY_ID",
+      "key": "AWS_CLOUDFRONT_KEY",
+      "url": "AWS_CLOUDFRONT_URL"
+    },
+    "s3": {
+      "region": "AWS_S3_REGION",
+      "bucket": "AWS_S3_BUCKET"
+    }
+=======
+  "sendgrid": {
+    "apiKey": "SENDGRID_API_KEY",
+    "from": "SENDGRID_FROM"
+>>>>>>> send-email
+  }
+}

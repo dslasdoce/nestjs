@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title>FoundersWorkshop - Email Verification</title>
+    <style>
+      /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
+
+      img {
+        border: none;
+        -ms-interpolation-mode: bicubic;
+        max-width: 100%;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%;
+      }
+      table td {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        vertical-align: top;
+      }
+
+      /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
+
+      .body {
+        width: 100%;
+      }
+
+      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+      .container {
+        display: block;
+        margin: 0 auto !important;
+        /* makes it centered */
+        max-width: 600px;
+        padding: 10px;
+        width: 600px;
+      }
+
+      /* This should also be a block element, so that it will fill 100% of the .container */
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 10px;
+      }
+
+      /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+      .main {
+        border-spacing: 0;
+        width: 100%;
+      }
+
+      .wrapper {
+        box-sizing: border-box;
+      }
+
+      .content-block {
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+
+      .footer {
+        clear: both;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+      }
+      .footer td,
+      .footer p,
+      .footer span,
+      .footer a {
+        color: #999999;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #212121;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+
+        margin: 0;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-size: 35px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      p,
+      ul,
+      ol {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: normal;
+        margin: 0;
+        margin-bottom: 35px;
+        line-height: 28px;
+      }
+      p li,
+      ul li,
+      ol li {
+        list-style-position: inside;
+        margin-left: 5px;
+      }
+
+      a {
+        color: #ee3d67;
+        text-decoration: underline;
+      }
+
+      /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+      .btn {
+        box-sizing: border-box;
+        width: 100%;
+      }
+      .btn > tbody > tr > td {
+        padding-bottom: 15px;
+      }
+      .btn table {
+        width: auto;
+      }
+      .btn table td {
+        background-color: #ffffff;
+        border-radius: 40px;
+        text-align: center;
+      }
+      .btn a {
+        background-color: #ffffff;
+        border: solid 1px #ee3d67;
+        border-radius: 40px;
+        box-sizing: border-box;
+        color: #ee3d67;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0;
+        padding: 12px 65px;
+        text-decoration: none;
+        text-transform: capitalize;
+        position: relative;
+      }
+      .btn a img {
+        position: absolute;
+        right: 20px;
+        top: 14px;
+      }
+
+      .btn-primary table td {
+        background-color: #ee3d67;
+      }
+
+      .btn-primary a {
+        background-color: #ee3d67;
+        border-color: #ee3d67;
+        color: #ffffff;
+      }
+
+      /* -------------------------------------
+          OTHER STYLES THAT MIGHT BE USEFUL
+      ------------------------------------- */
+      .last {
+        margin-bottom: 0;
+      }
+
+      .first {
+        margin-top: 0;
+      }
+
+      .align-center {
+        text-align: center;
+      }
+
+      .align-right {
+        text-align: right;
+      }
+
+      .align-left {
+        text-align: left;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      .mt0 {
+        margin-top: 0;
+      }
+
+      .mb0 {
+        margin-bottom: 0;
+      }
+
+      .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0;
+      }
+
+      .powered-by a {
+        text-decoration: none;
+      }
+
+      hr {
+        border: 0;
+        border-bottom: 1px solid #f6f6f6;
+        margin: 20px 0;
+      }
+
+      /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+      @media only screen and (max-width: 620px) {
+        table.body h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important;
+        }
+        table.body p,
+        table.body ul,
+        table.body ol,
+        table.body td,
+        table.body span,
+        table.body a {
+          font-size: 16px !important;
+        }
+        table.body .wrapper,
+        table.body .article {
+          padding: 10px !important;
+        }
+        table.body .content {
+          padding: 0 !important;
+        }
+        table.body .container {
+          padding: 0 !important;
+          width: 100% !important;
+        }
+        table.body .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important;
+        }
+        table.body .btn table {
+          width: 100% !important;
+        }
+        table.body .btn a {
+          width: 100% !important;
+        }
+        table.body .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important;
+        }
+        .copyright {
+          font-size: 8px;
+        }
+
+        .text-content {
+          padding: 15px 25px 30px 25px !important;
+        }
+      }
+
+      /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+      @media all {
+        .ExternalClass {
+          width: 100%;
+        }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%;
+        }
+        .apple-link a {
+          color: inherit !important;
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+          text-decoration: none !important;
+        }
+        #MessageViewBody a {
+          color: inherit;
+          text-decoration: none;
+          font-size: inherit;
+          font-family: inherit;
+          font-weight: inherit;
+          line-height: inherit;
+        }
+        .btn-primary table td:hover {
+          background-color: #f25c7f !important;
+        }
+        .btn-primary a:hover {
+          background-color: #f25c7f !important;
+          border-color: #f25c7f !important;
+        }
+      }
+
+      .text-content {
+        padding: 30px 50px 60px 50px;
+      }
+
+      .logo {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .logo img {
+        width: 400px;
+        padding: 50px 0;
+      }
+      .logo-hand {
+        padding: 50px 0 40px 0;
+      }
+
+      .social-link img {
+        width: 120px;
+      }
+      .copyright {
+        font-size: 12px;
+        color: #a4a4a4;
+        padding-top: 15px;
+        margin-bottom: 0;
+      }
+
+      .logo-hand .img-light-mode {
+        display: block !important;
+      }
+      .logo-hand .img-dark-mode {
+        display: none !important;
+      }
+      @media (prefers-color-scheme: dark) {
+        .logo-hand .img-light-mode {
+          display: none !important;
+        }
+        .logo-hand .img-dark-mode {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <span class="preheader">Welcome to DevRepo!</span>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+      <tr>
+        <td>&nbsp;</td>
+        <td class="container">
+          <div class="content">
+            <!-- START CENTERED WHITE CONTAINER -->
+            <table role="presentation" class="main">
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td class="wrapper">
+                  <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>
+                        <p class="logo">
+                          <img src="{{mainUrl}}/email/assets/logo.png" alt="" border="0" />
+                        </p>
+                        <div class="text-content">
+                          <p>Hey {{name}}, Welcome to the DevRepo By FoundersWorkshop!</p>
+                          <p>
+                            You're one step closer to be part of this family.
+                          </p>
+                          <p>
+                            Your verification code is <b>{{code}}</b>
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>

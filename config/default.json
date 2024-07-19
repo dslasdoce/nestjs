@@ -1,0 +1,31 @@
+{
+  "env": "local",
+  "database": {
+    "connection": "postgres://postgres:postgres@localhost:5432/codebase-local"
+  },
+  "server": {
+    "port": 3001,
+    "host": "localhost",
+    "scheme": "http",
+    "url": "http://localhost:3001"
+  },
+<<<<<<< HEAD
+  "aws": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "cloudfront": {
+      "keyId": "",
+      "key": "",
+      "url": ""
+    },
+    "s3": {
+      "region": "us-east-1",
+      "bucket": ""
+    }
+=======
+  "sendgrid": {
+    "apiKey": "SG.8Q5Jexample",
+    "from": "No Reply <no-reply@foundersworkshop.com>"
+>>>>>>> send-email
+  }
+}
